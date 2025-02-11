@@ -4,11 +4,13 @@
     <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4ZZGFG8T7"></script>
   <script>
+    
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-S4ZZGFG8T7');
+    
   </script>   
 
     <!-- Bootstrap core CSS -->
@@ -28,6 +30,68 @@
           font-size: 3.5rem;
         }
       }
+      .redirect-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.redirect-button:hover {
+    background-color: #0056b3;
+}
+body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .redirect-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .redirect-button:hover {
+            background-color: #0056b3;
+        }
+        .search-box {
+            margin-top: 20px;
+        }
+        .search-box input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            max-width: 100%;
+        }
+        .search-box input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .search-box input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
     </style>
 
     
@@ -93,17 +157,35 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
-        <p>Se nos ha presentado un inconveniente al mostrarle el contenido solicitado. Nos disculpamos</p>
+        <h1>¡Oops! Página no encontrada</h1>
+        <p>Parece que te has perdido. No te preocupes, ¡encontrarás algo genial en nuestra tienda!</p>
+        <a href="https://store.miyuro.one/" class="redirect-button">Ir a la Tienda</a>
+
       </div>
-      <div class="modal-footer flex-column border-top-0">
-        <button type="button" onclick="window.location.href='https://store.miyuro.one/';" class="btn btn-lg btn-primary w-100 mx-0 mb-2">Go to store</button>
-       <!--  <button type="button" onclick="getUser();"class="btn btn-lg w-100 mx-0" >Close</button>  -->
+     <hr class="featurette-divider">
+      <div>
+        <img id = "producto" src="./st330/st330.1.png" alt="Producto Popular" style="width:100%;max-width:300px;">
+
       </div>
+  <!--      <div class="modal-footer flex-column border-top-0">
+        <button type="button" onclick="window.location.href='https://store.miyuro.one/'" class="btn btn-lg btn-primary w-100 mx-0 mb-2">Go to store</button>
+       <button type="button" onclick="getUser();"class="btn btn-lg w-100 mx-0" >Close</button>  
+      </div>
+-->
+
+
+
     </div>
   </div>
 </div>
  
-    <script src="scripts/miyuro.one"></script>
+     <script>
+
+       let ranpro = document.getElementById("producto");
+       
+        let ind =  Math.floor(Math.random() * (15)) + 316 ; 
+       ranpro.src = "./st" + ind + "/st" + ind + ".1.png"; 
+     </script>
 
       
   </body>
