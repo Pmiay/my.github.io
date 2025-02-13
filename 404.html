@@ -183,8 +183,40 @@ body {
 
        let ranpro = document.getElementById("producto");
        
-        let ind =  Math.floor(Math.random() * (15)) + 316 ; 
+/*        let ind =  Math.floor(Math.random() * (15)) + 316 ; 
        ranpro.src = "https://store.miyuro.one/st" + ind + "/st" + ind + ".1.png"; 
+*/
+const url = "https://miyuroone.azurewebsites.net/api/Pedido?code=yGCIHfOzVEYsJpqY5vc4ZmRZnxx2F4ZEnfr2zdRp0bESAzFuE-2xPQ==";
+                                                                    
+
+const data = {
+  id: "316",
+  pedido: "pagina"
+};
+ 
+fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => {
+      if (!response.ok) {alert("response");
+        throw new Error('Network response was not ok ' + response.statusText);
+      }alert("ret");
+      return response.text(); // Convertir la respuesta a texto
+      
+    })
+    .then(text => {alert("text");
+      console.log('Success:', text); // Manejar el texto recibido
+    // Aquí puedes agregar el código para trabajar con los datos
+     alert(text);
+    //ranpro.src = text.toString();
+    })
+    .catch(error => {alert("catch");
+      console.error('There was a problem with the fetch operation:', error);
+    });
      </script>
 
       
