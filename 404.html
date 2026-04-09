@@ -181,10 +181,17 @@ body {
  
      <script>
 
-       let ranpro = document.getElementById("producto");
-       
-        let ind =  Math.floor(Math.random() * (15)) + 316 ; 
-       ranpro.src = "https://store.miyuro.one/st" + ind + "/st" + ind + ".1.png"; 
+      fetch('http://localhost:7071/api/calcu?name=st')
+  .then(response => response.text()) // o .json() si la API responde un objeto
+  .then(data => {
+    console.log(data); // Aquí tienes el resultado de tu función
+   
+        let ranpro = document.getElementById("producto");
+        ranpro.src = data;
+  })
+  .catch(error => {
+    console.error('Error al llamar a la API:', error);
+  }); 
       </script>
       
   </body>
